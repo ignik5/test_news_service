@@ -10,6 +10,6 @@ class City extends Model
 
     public function news()
     {
-        return $this->belongsTo(News::class, 'id', 'id_city')->orwhere('id_city','=',0)->get();
+        return $this->belongsTo(News::class, 'id', 'id_city')->orwhere('id_city','=',0)->paginate(5);
     }
 }
